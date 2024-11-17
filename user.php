@@ -18,7 +18,7 @@
 
         // validate email
         public static function validate_email($email){
-            return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;;
+            return preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email);
         }
 
         public function copy_with($username = null, $email = null, $password = null){
